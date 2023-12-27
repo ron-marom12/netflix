@@ -1,0 +1,23 @@
+Made by: Ron Marom ron.marom12@gmail.com, +972584980222
+
+Phishing Project Overview
+
+The project aimed to demonstrate the ease and potential dangers associated with creating and operating a phishing website. By simulating a phishing attack, the experiment sought to highlight the vulnerabilities in online security practices and the ease with which sensitive information can be maliciously acquired.
+
+Methodology
+
+A mock phishing website was developed, mimicking the appearance and functionality of the popular streaming service Netflix. The website was crafted by replicating the HTML structure of the official Netflix login page, a technique commonly employed by cybercriminals to deceive unsuspecting users. The site was hosted on GitHub, a widely accessible and commonly used platform, demonstrating the potential for malicious use of otherwise legitimate services.
+
+The core functionality of the phishing site was to capture user login credentials. When a user entered their Netflix login details, the website would save these credentials to a .json file hosted in the repository. After capturing this information, users were redirected to an official Netflix error page, further disguising the malicious nature of the site and reducing suspicion.
+
+Results
+
+The experiment successfully demonstrated that with minimal effort and technical expertise, a convincing phishing site could be created and deployed. In less than an hour, the site was operational and capable of harvesting user credentials. This alarming result underscores the ease with which cybercriminals can exploit web technologies to execute phishing attacks.
+
+Implications and Conclusions
+
+The simplicity of creating such a phishing site reveals significant vulnerabilities in online security. While this project focused on Netflix, the same principles could be applied to more sensitive targets, such as online banking or government services, where the stakes are considerably higher. The ease of replicating legitimate websites and the effectiveness of these deceptive tactics pose a substantial risk to users' personal and financial information.
+
+This project serves as a stark reminder of the importance of cybersecurity awareness and the need for robust security measures. Users must be vigilant, and organizations must implement and continuously update their security protocols to protect against such threats. The experiment, although conducted in a controlled and ethical manner, highlights a prevalent and growing issue in the digital age: the ease and potential impact of phishing attacks.
+
+End of Project Description
