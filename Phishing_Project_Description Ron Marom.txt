@@ -20,5 +20,5 @@ The simplicity of creating such a phishing site reveals significant vulnerabilit
 
 This project serves as a stark reminder of the importance of cybersecurity awareness and the need for robust security measures. Users must be vigilant, and organizations must implement and continuously update their security protocols to protect against such threats. The experiment, although conducted in a controlled and ethical manner, highlights a prevalent and growing issue in the digital age: the ease and potential impact of phishing attacks.
 
-Note: I removed the token of my repository from the index.html so the "phishing action" in not active.
+Note: I removed the token of my repository from the index.html so the "phishing action" in not active and of course from security perspective of my account.
 End of Project Description
